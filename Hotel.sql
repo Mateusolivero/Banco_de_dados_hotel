@@ -1,5 +1,5 @@
-create database hote01_2c1_33;
-use hotel1_2c1;
+create database hotel;
+use hotel;
 
 create table cliente(
 cod integer,
@@ -13,36 +13,31 @@ cod integer,
 DataInicio date,
 DataFim date,
 quarto int,
-Valor double(9,2),
-foreign key (cod_cliente_fk) references cliente (cod_cliente)
+Valor double(9,2)
 );
 
 create table Hospede(
 cod integer,
 nome varchar(80),
 telefone char(15),
-email varchar(60),
-foreign key (cod_reserva_fk) references reserva (cod_reserva)
+email varchar(60)
 );
 
 create table Quarto(
 numero int,
 andar int,
-classificacao varchar(40),
-foreign key (cod_hospede_fk) references hospede (cod_hospede)
+classificacao varchar(40)
 );
 
 create table servicos(
 cod integer,
 itens varchar(50),
 tipo varchar(110),
-obrevacao varchar(100),
-foreign key (cod_quarto_fk) references quarto (cod_quarto)
+obrevacao varchar(100)
 );
 
 create table servico_copo(
 cod integer,
 registro varchar(100),
-tipo_servico varchar(40),
-foreign key (cod_servicos_fk) references servicos (cod_servico)
+tipo_servico varchar(40)
 );
